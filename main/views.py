@@ -27,7 +27,6 @@ def test():
         os.remove('test.py')
     
     print(result)
-    session['result'] = result
     return result
 
 @app.route('/check')
