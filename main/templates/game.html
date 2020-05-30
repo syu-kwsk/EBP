@@ -1,10 +1,13 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<script src="{{ url_for('static', filename='js/obj.js')}}"></script>
 <p>Hello, World</p>
 
-<div class="resizeimage" align="center">
-<img src="{{ url_for('static', filename='images/desk.png')}}" >
+<div class="obj" onclick=showalert('出力はprint()')>
+  <div class="resizeimage" align="center">
+    <img src="{{ url_for('static', filename='images/desk.png')}}" >
+  </div>
 </div>
 
 {% endblock %}
