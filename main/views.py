@@ -5,6 +5,10 @@ from main import app
 def game():
     return render_template('game.html')
 
+@app.route("/end")
+def finish():
+    return render_template('end.html')
+  
 @app.route("/test", methods=['POST'])
 def test():
     if request.method == 'POST':
