@@ -6,7 +6,10 @@
 </head>
 <body>
   <div id="editor" style="height: 600px"></div>
+  <button onclick='submit();'>Submit</button>
+</form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/cobalt");
@@ -14,6 +17,25 @@
     editor.getSession().setMode("ace/mode/python");
     editor.getSession().setUseWrapMode(true);
     editor.getSession().setTabSize(4);
+
+    function submit() {
+      var fData = new FormData();
+      fData.append("submitted_script", editor.getValue());
+      $.ajax({
+            url: '/check',
+            type: 'POST',
+            data: fData ,
+            contentType: false,
+            processData: false,
+            success: function(data, dataType) {
+                console.log('Success');
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log('Error : ' + errorThrown);
+            }
+      });
+      return console.log(editor.getValue());
+    }
   </script>
 </body>
 </html>

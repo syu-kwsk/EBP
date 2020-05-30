@@ -6,8 +6,10 @@ def index():
 
     return 'Hello, World'
 
-@app.route("/check")
+@app.route("/check", methods=['GET','POST'])
 def check():
+    if request.method == 'POST':
+      print(request.form['submitted_script'])
     return render_template('check.html')
 
 if __name__ == "__main__":
