@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+}
+
+.main section {
+  flex: 1;
+}
+
+.main .game-part {
+  flex: 2;
+}

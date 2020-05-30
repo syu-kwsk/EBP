@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+<div class="main">
+  <section class="game-part">
+  {% include "game.html" %}
+  </section>
+  <section class="test-part">
+  {% include "check.html" %}
+  </section>
+</div>
+
+{% endblock %}
