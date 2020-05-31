@@ -22,32 +22,6 @@ function makeClueModal() {
   }
 }
 
-function makeTestModal(ans, msg) {
-  var test_modal = new tingle.modal({
-      footer:true,
-      beforeClose: function() {
-          return true; // close the modal
-      }
-  });
-
-  // data-modal属性を持つトリガーボタンを取得
-  var modalTrigger = document.querySelectorAll('[data-modal]');
-  if(modalTrigger.length > 0){
-      for (let i = 0; i < modalTrigger.length; i++) {
-          var el = modalTrigger[i];
-          //console.log($(el.getAttribute('data-modal')).attr('class'));
-          if ($(el.getAttribute('data-modal')).attr('class') != "test-modal") {
-            continue;
-          }
-          else {
-            //イベントをバインド
-            _addTestModalEvent(test_modal, el, ans, msg);
-          }
-      }
-  }
-}
-
-
 function _addClueModalEvent(md, el){
     el.addEventListener('click',function(event){
         event.preventDefault();
@@ -65,11 +39,26 @@ function _addClueModalEvent(md, el){
     })
 }
 
-function _addTestModalEvent(md, el, ans, msg){
+function makeTestModal(id, ans, msg) {
+  var test_modal = new tingle.modal({
+      footer:true,
+      beforeClose: function() {
+          return true; // close the modal
+      }
+  });
+
+  // data-modal属性を持つトリガーボタンを取得
+  var target = '#'+id;
+  var el = document.querySelector('#tri_'+id);
+  //イベントをバインド
+  _addTestModalEvent(test_modal, el, target, ans, msg);
+}
+
+function _addTestModalEvent(md, el, target, ans, msg){
     el.addEventListener('click', function(event){
         event.preventDefault();
         // data-modalに指定したIDの要素を取得
-        var target = el.getAttribute('data-modal');
+        //var target = el.getAttribute('data-modal');
         // モーダルのコンテンツを取得
         var modalContent = document.querySelector(target);
         if(modalContent){
@@ -80,10 +69,12 @@ function _addTestModalEvent(md, el, ans, msg){
             md.setFooterContent("");
             md.addFooterBtn('開ける', 'tingle-btn tingle-btn--primary', function() {
                 if($('#result').text() == ans){
-                  test_modal.close();
+                  md.close();
                   alert(msg);
+                  window.location.href='end';
                 } else {
-                  alert("開かない！！\nヒントを探そう！")
+                  md.close()
+                  alert("出力が間違っているようだ。。\nヒントを探そう！")
                 }
             });
             // モーダルオープン
@@ -93,4 +84,4 @@ function _addTestModalEvent(md, el, ans, msg){
 }
 
 makeClueModal();
-makeTestModal();
+makeTestModal('door_modal', 'HelloWorld\n', '「printで出力」を手に入れた');
