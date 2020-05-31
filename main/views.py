@@ -12,6 +12,10 @@ def game():
 @app.route("/end")
 def finish():
     return render_template('end.html')
+
+@app.route("/start")
+def start():
+    return render_template('start.html')
   
 @app.route("/test", methods=['POST'])
 def test():
