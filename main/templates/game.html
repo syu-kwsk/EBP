@@ -1,15 +1,6 @@
 <div>
 <script src="{{ url_for('static', filename='js/tingle.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/obj.js')}}"></script>
-<script>
-  var modal = new tingle.modal({
-    beforeClose: function() {
-      // モダルの要素内を削除
-      modal.setContent("");
-      return true;
-    }
-  });
-</script>
 <div style="position:relative;" >
     <img src="{{ url_for('static', filename='images/background.jpg')}}"
      width="100%" height="100%" border="0">
@@ -22,36 +13,11 @@
      width="100%" height="250%">
   </div>
 </div>
-<div style="display: none;">
-    <div id="modal__content">
+<div class="clue-modal" style="display: none;">
+    <div id="modal__content" class="clue-modal">
         pythonで出力するにはprint()だ
     </div>
 </div>
-<script>
-  var modalTrigger = document.querySelectorAll('[data-modal]');
-  if(modalTrigger.length > 0){
-      for (let i = 0; i < modalTrigger.length; i++) {
-          var el = modalTrigger[i];
-          //イベントをバインド
-          _addModalEvent(el);
-      }
-  }
-  function _addModalEvent(el){
-      el.addEventListener('click',function(event){
-          event.preventDefault();
-          // data-modalに指定したIDの要素を取得
-          var target = el.getAttribute('data-modal');
-          // モーダルのコンテンツを取得
-          var modalContent = document.querySelector(target);
-          if(modalContent){
-              // コンテンツをセット
-              modal.setContent("");
-              modal.setContent(modalContent.innerHTML);
-
-              // モーダルオープン
-              modal.open();
-          }
-      })
-  }
+<script src="{{ url_for('static', filename='js/modal.js') }}">
 </script>
 </div>
