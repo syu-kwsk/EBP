@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+    <p style="font-size:30px;text-align:center;"> Enjoy By Proken </p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/door.css') }}">
 <div class="door-wrap">
@@ -8,5 +9,10 @@
     <img src="{{ url_for('static', filename='images/door_back.jpg')}}" alt="ドアの縁" class="door-back">
 </div>
 <script src="{{ url_for('static', filename='js/door.js') }}"></script>
-<td align="center" valign="middle"><font color="blue"><font size="6">ようこそプログラミングの世界へ</td></font></font>
+ <div style="position:absolute; top:65vw; left:27vw;">
+    <font color="blue"><font size="6">ようこそプログラミングの世界へ</td></font></font>
+ </div>
+   <div style=position:absolute;top:80%;left:75%;">
+    <img src="{{ url_for('static', filename='images/proken.png')}}" width="250%" height="250%">
+   </div>
 {% endblock %}

@@ -5,10 +5,10 @@
 }
 .door, .door-back {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    width: 50vw;
-    height: 60vw;
+    width: 30vw;
+    height: 40vw;
     transform: translate(-50%, -50%);
 }
 .door {
