@@ -70,9 +70,13 @@ function _addTestModalEvent(md, el, target, ans, msg){
             md.addFooterBtn('開ける', 'tingle-btn tingle-btn--primary', function() {
                 if($('#result').text() == ans){
                   md.close();
+                  if (ans == 997) {
+                    console.log("ahi")
+                    window.location.href = 'end';
+                  }
                   alert(msg);
-                  window.location.href='end';
                 } else {
+                  console.log($('#result').text());
                   md.close()
                   alert("出力が間違っているようだ。。\nヒントを探そう！")
                 }
@@ -84,4 +88,6 @@ function _addTestModalEvent(md, el, target, ans, msg){
 }
 
 makeClueModal();
-makeTestModal('door_modal', 'HelloWorld\n', '「printで出力」を手に入れた');
+makeTestModal('door_modal', '997\n', '最後の扉が今、開く……！');
+makeTestModal('ship_modal', 'HelloWorld\n', '「printで出力」を手に入れた');
+makeTestModal('box_modal', '25\n', '「余りの計算」を手に入れた');

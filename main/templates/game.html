@@ -1,27 +1,78 @@
 <div>
 <script src="{{ url_for('static', filename='js/tingle.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/obj.js')}}"></script>
+<style type="text/css">
+p {font-size:30px;}
+</style>
 <div style="position:relative;" >
-    <img src="{{ url_for('static', filename='images/background.jpg')}}"
+    <img src="{{ url_for('static', filename='images/haikyo.jpeg')}}"
      width="100%" height="100%" border="0">
-  <div class="obj" style="width:20%;height:20%;position:absolute;top:10%;left:10%;" data-modal='#desk_modal'>
+  
+  <div class="obj" style="width:20%;height:20%;position:absolute;top:70%;left:70%;" data-modal='#letter_modal'>
+    <img src="{{ url_for('static', filename='images/letter.png')}}" 
+     width="100%" height="140%">
+  </div>
+  <div style="display: none;">
+    <div id="letter_modal" class="clue-modal">
+        <p>pythonで出力するにはprint()だ</p>
+    </div>
+  </div>
+
+  <div class="obj" id='tri_ship_modal' style="width:10%;height:10%;position:absolute;top:50%;left:25%;" data-modal='#ship_modal'>
+    <img src="{{ url_for('static', filename='images/ship.png')}}" 
+     width="100%" height="250%">
+  </div>
+  <div style="display: none;">
+    <div id="ship_modal" class="ship-modal">
+        <p>HelloWorld を出力せよ</p>
+    </div>
+  </div>
+  
+  <div class="obj" style="width:20%;height:20%;position:absolute;top:10%;left:10%;" data-modal='#bati_modal'>
+    <img src="{{ url_for('static', filename='images/bati.png')}}" 
+     width="100%" height="140%">
+  </div>
+  <div style="display: none;">
+    <div id="bati_modal" class="clue-modal">
+        <p>[数値]%[数値]で割り算の余りだ</p> 
+    </div>
+  </div>
+
+  <div class="obj" id='tri_box_modal' style="width:20%;height:20%;position:absolute;top:0%;left:60%;" data-modal='#box_modal'>
+    <img src="{{ url_for('static', filename='images/box.png')}}" 
+     width="100%" height="250%">
+  </div>
+  <div style="display: none;">
+    <div id="box_modal" class="box-modal">
+        <p>2020の5倍を31で割った余りって何だ？<br>
+        「printで出力」が必要</p>
+    </div>
+  </div>
+
+  <div class="obj" style="width:20%;height:20%;position:absolute;top:70%;left:10%;" data-modal='#desk_modal'>
     <img src="{{ url_for('static', filename='images/desk.png')}}" 
      width="100%" height="140%">
   </div>
-  <div class="obj" id='tri_door_modal' style="width:20%;height:20%;position:absolute;top:50%;left:50%;" data-modal='#door_modal'>
+  <div style="display: none;">
+    <div id="desk_modal" class="clue-modal">
+       <p>素数のポイントは<br>
+       <span style="font-weight:bold">「1とその数で割ったときだけ余りが0」</span><br>
+       ってこと</p>
+    </div>
+  </div>
+
+  <div class="obj" id='tri_door_modal' style="width:20%;height:20%;position:absolute;top:25%;left:65%;" data-modal='#door_modal'>
     <img src="{{ url_for('static', filename='images/door.jpg')}}" 
      width="100%" height="250%">
   </div>
-</div>
-<div style="display: none;">
-    <div id="desk_modal" class="clue-modal">
-        pythonで出力するにはprint()だ
-    </div>
-</div>
-<div style="display: none;">
+  <div style="display: none;">
     <div id="door_modal" class="door-modal">
-        HelloWorldを出力せよ
+        <p>いよいよ大詰め<br>
+        3桁の最大の素数を求められるか？<br>
+        「for文, if文, 余り, 出力」が必要</p>
     </div>
+  </div>
+
 </div>
 <script src="{{ url_for('static', filename='js/modal.js') }}">
 </script>
