@@ -1,15 +1,28 @@
 <div>
+<script src="{{ url_for('static', filename='js/tingle.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/obj.js')}}"></script>
 <div style="position:relative;" >
     <img src="{{ url_for('static', filename='images/background.jpg')}}"
      width="100%" height="100%" border="0">
-  <div class="obj" style="width:20%;height:20%;position:absolute;top:10%;left:10%;" onclick=showalert('出力はprint()')>
+  <div class="obj" style="width:20%;height:20%;position:absolute;top:10%;left:10%;" data-modal='#desk_modal'>
     <img src="{{ url_for('static', filename='images/desk.png')}}" 
      width="100%" height="140%">
   </div>
-  <div class="obj" style="width:20%;height:20%;position:absolute;top:50%;left:50%;" onclick=showalert('helloworldを出力せよ！！')>
+  <div class="obj" id='tri_door_modal' style="width:20%;height:20%;position:absolute;top:50%;left:50%;" data-modal='#door_modal'>
     <img src="{{ url_for('static', filename='images/door.jpg')}}" 
      width="100%" height="250%">
   </div>
 </div>
+<div style="display: none;">
+    <div id="desk_modal" class="clue-modal">
+        pythonで出力するにはprint()だ
+    </div>
+</div>
+<div style="display: none;">
+    <div id="door_modal" class="door-modal">
+        HelloWorldを出力せよ
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/modal.js') }}">
+</script>
 </div>

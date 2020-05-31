@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>EBP</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-  <h1>EBP!</h1>
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/tingle.min.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>EBP!</h1>
   {% block body %}{% endblock%}
 </body>
 </html>
