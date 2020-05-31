@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <div style="position:absolute; top:120px; left:200px;">
-     </font><font color="green"><font size="15">Escape By Python</br></font></font>
+<div style="position:relative;" >
+    <img src="{{ url_for('static', filename='images/start.jpg')}}"
+     width="100%" height="100%" border="0">
+  <div style="position:absolute; top:15vw; left:30vw;">
+     <font color="green"><font size="11"><td align="center" valign="top">Escape By Python</br></font></font></td>
   </div>
-    <div style="position:absolute; top:300px; left:350px;">
-        <font size="10">Start</font>
+    <div style="position:absolute; top:30vw; left:45vw;">
+    <a href="http://escape-by-python.herokuapp.com/"><font color="blue"><font size="8">Start</font></font></a>
     </div>
-
-
 
 {% endblock %}
