@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div style="position:relative;" >
+    <img src="{{ url_for('static', filename='images/start.jpg')}}"
+     width="100%" height="100%" border="0">
+  <div style="position:absolute; top:15vw; left:30vw;">
+     <font color="green"><font size="11"><td align="center" valign="top">Escape By Python</br></font></font></td>
+  </div>
+    <div style="position:absolute; top:30vw; left:45vw;">
+    <a href="{{url_for('main')}}"><font color="blue"><font size="8">Start</font></font></a>
+    </div>
+    <div style="position:absolute; top:50vw; left:0vw;">
+      <font color="white"><font size="11">Escape By Pythonとはpythonを使って部屋から脱出をするというゲームです</br></font></td>
+{% endblock %}
