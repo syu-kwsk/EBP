@@ -1,9 +1,9 @@
 from flask import Flask, request, abort, redirect, url_for, render_template
 from main import app
 
-@app.route("/")
-def index():
-   return render_template('index.html')
+@app.route("/main")
+def main():
+   return render_template('main.html')
 
 @app.route("/game")
 def game():
@@ -13,7 +13,7 @@ def game():
 def finish():
     return render_template('end.html')
 
-@app.route("/start")
+@app.route("/")
 def start():
     return render_template('start.html')
   

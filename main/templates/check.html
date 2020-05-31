@@ -1,13 +1,13 @@
 <div>
-<div id="editor" style="height: 600px"></div>
-<button onclick='submit();'>Submit</button>
-<p id="result"></p>
+<div id="editor" style="height: 400px"></div>
+<button onclick='submit();' style="width:100%;font-size:50px">実行</button>
+<p id="result" style="font-size:50px;text-align:center;"></p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/cobalt");
-  editor.setFontSize(14);
+  editor.setFontSize(30);
   editor.getSession().setMode("ace/mode/python");
   editor.getSession().setUseWrapMode(true);
   editor.getSession().setTabSize(4);
